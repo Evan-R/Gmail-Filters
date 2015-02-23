@@ -1,0 +1,95 @@
+<!--[!doctype html]-->
+<html>
+
+<head>
+	<title>
+		Gmail Filters - Add Alias Filters For Domains
+	</title>
+</head>
+
+<body
+	data-ng-app="FilterGenerator"
+>
+
+<section>
+	<div 
+		data-ng-controller="ctrl.FilterGenerator"
+	>
+		<input 
+			data-ng-model="domainsInput"
+			placeholder="enter domain"
+		/>
+		<button
+			data-ng-click="addDomain()"
+		>Add Domain</button>
+		<br />
+		<ul>
+			<li
+				data-ng-repeat="domain in domains"
+			>
+				<span
+					data-ng-bind-template="{{domain.name}}"
+				></span>
+				<button
+					data-ng-click="removeDomain(domain)"
+				>Remove</button>
+			</li>
+		</ul>
+		<hr />
+		
+		<input 
+			data-ng-model="usersInput"
+			placeholder="enter user"
+		/>
+		<button
+			data-ng-click="addUser()"
+		>Add User</button>
+		<br />
+		<ul>
+			<li
+				data-ng-repeat="user in users"
+			>
+				<span
+					data-ng-bind-template="{{user.name}}"
+				></span>
+				<button
+					data-ng-click="removeUser(user)"
+				>Remove</button>
+			</li>
+		</ul>
+		<hr />
+		
+		<button
+			data-ng-click="applyFilters()"
+		>Generate Filters</button>
+	</div>	
+</section>
+
+
+<script 
+	type="text/javascript"
+	src="js/module/angular/1.3.13/angular.js"
+></script>
+<script 
+	type="text/javascript"
+	src="js/module/angular/1.3.13/angular-resource.js"
+></script>
+<script 
+	type="text/javascript"
+	src="js/module/angular/1.3.13/angular-route.js"
+></script>
+<script 
+	type="text/javascript"
+	src="js/app/FilterGenerator/app.js"
+></script>
+<script 
+	type="text/javascript"
+	src="js/app/FilterGenerator/ctrl/FilterGenerator.js"
+></script>
+
+
+
+
+</body>
+
+</html>
