@@ -1,5 +1,5 @@
 app.factory(
-	'',
+	'svc.Cfg',
 	[
 	 	function(
 	 			
